@@ -5,10 +5,6 @@ from .models import *
 from .serializers import *
 from rest_framework.response import Response
 
-# Create your views here.
-# def home(request):
-#     return HttpResponse('This is my homepage')
-
 class ProjectViewset(viewsets.ViewSet):
     queryset = Project.objects.all()
     permission_classes = [permissions.AllowAny]
