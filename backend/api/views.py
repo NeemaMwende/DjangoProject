@@ -6,8 +6,8 @@ from .serializers import *
 from rest_framework.response import Response
 
 # Create your views here.
-def home(request):
-    return HttpResponse('This is my homepage')
+# def home(request):
+#     return HttpResponse('This is my homepage')
 
 class ProjectViewset(viewsets.ViewSet):
     queryset = Project.objects.all()
@@ -20,7 +20,12 @@ class ProjectViewset(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        pass
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=400)
 
     def retrieve(self, request, pk=None):
         pass
