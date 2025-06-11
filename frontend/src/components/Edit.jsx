@@ -4,7 +4,7 @@ import { Box, Button, Typography } from '@mui/material'
 import MyDatePickerField from './forms/MyDatePickerField'
 import MyTextField from './forms/MyTextField'
 import MySelectField from './forms/MySelectField'
-import MyMultiLineField from './forms/MyMultilineField'
+import MyMultilineTextField from './forms/MyMultilineTextField'
 import {useForm} from 'react-hook-form'
 import AxiosInstance from './Axios'
 import Dayjs from 'dayjs'
@@ -130,7 +130,7 @@ const Edit = () => {
           </Box>
 
           <Box sx={{display:'flex', justifyContent:'space-around'}}> 
-              <MyMultiLineField
+              <MyMultilineTextField
                 label="Comments"
                 name="comments"
                 control={control}
